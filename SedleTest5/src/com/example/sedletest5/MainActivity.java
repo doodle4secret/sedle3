@@ -115,6 +115,7 @@ public class MainActivity extends ListActivity {
 //        	System.out.println(position + " : " + bgcolor);
         	if (position > 0) {
 				i.paint.setColor(0xff000000 | mColors.get(position - 1));
+				i.paint2.setColor(0x7f000000 | mColors.get(position - 1));
 
         		/*
         		View up = parent.getChildAt(position - 1);
@@ -161,18 +162,19 @@ public class MainActivity extends ListActivity {
 
         class DrawView extends View {
             Paint paint = new Paint();
-
+            Paint paint2 = new Paint();
             
             public DrawView(Context context) {
                 super(context);
                 paint.setColor(0x00000000);
+                paint2.setColor(0x00000000);
             }
             @Override
             public void onDraw(Canvas canvas) {
                super.onDraw(canvas);
 //               canvas.drawLine(0, 0, this.getWidth(), 0, paint);
+               canvas.drawLine(0, 1, this.getWidth(), 1, paint2);
                canvas.drawLine(0, 2, this.getWidth(), 2, paint);
-               canvas.drawLine(0, 3, this.getWidth(), 3, paint);
 
             }
     }        
