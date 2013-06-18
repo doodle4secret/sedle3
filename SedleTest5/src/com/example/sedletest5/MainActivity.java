@@ -4,6 +4,10 @@ import android.os.Bundle;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -64,9 +68,11 @@ public class MainActivity extends ListActivity {
     public class PhotoAdapter extends BaseAdapter {
 
         private Integer[] mPhotoPool = {
-                R.drawable.test1, R.drawable.test2};
-
+                R.drawable.test800, R.drawable.test400, R.drawable.test1, R.drawable.test2};
+        
         private ArrayList<Integer> mPhotos = new ArrayList<Integer>();
+        private ArrayList<Integer> mColors = new ArrayList<Integer>();
+        private ArrayList<Integer> mHeights = new ArrayList<Integer>();
         
         public PhotoAdapter(Context c) {
             mContext = c;
@@ -85,6 +91,7 @@ public class MainActivity extends ListActivity {
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
+        	/*
             // Make an ImageView to show a photo
             ImageView i = new ImageView(mContext);
 
@@ -94,6 +101,43 @@ public class MainActivity extends ListActivity {
                     LayoutParams.WRAP_CONTENT));
             // Give it a nice background
             i.setBackgroundResource(R.drawable.ic_launcher);
+            */
+        	
+        	DrawView i = new DrawView(mContext);
+        	
+        	if (mColors.get(position) == 0) {
+        		int bgcolor = (int)Math.round(Math.random() * 0xffffff);
+        		mColors.set(position, bgcolor);
+        	}
+        	i.setBackgroundColor(0xff000000 | mColors.get(position));
+        	i.setLayoutParams(new AbsListView.LayoutParams(LayoutParams.MATCH_PARENT, mHeights.get(position)));
+        	
+//        	System.out.println(position + " : " + bgcolor);
+        	if (position > 0) {
+				i.paint.setColor(0xff000000 | mColors.get(position - 1));
+
+        		/*
+        		View up = parent.getChildAt(position - 1);
+        		if (up != null) {
+                	System.out.println("up exist");
+        			Drawable d = up.getBackground();
+        			if (d instanceof ColorDrawable) {
+                    	System.out.println("color is " + (((ColorDrawable)d).getColor() | 0x00ffffff));
+        				i.paint.setColor(((ColorDrawable)d).getColor());
+        			}
+        		}
+        		*/
+/*        		View aline = new View(mContext);
+        		aline.setBackground(parent.getChildAt(position - 1).getBackground());
+        		aline.setLayoutParams(new AbsListView.LayoutParams(LayoutParams.MATCH_PARENT, 1));
+        		*/
+//        		i.
+//        		i.setBackground(parent.getChildAt(position - 1).getBackground());
+//        		Drawable d = ;
+  //      		System.out.println(d.toString());
+  //      		View up = (View)getItem(0);
+    //    		up.getBackground();
+        	}
             return i;
         }
 
@@ -101,15 +145,36 @@ public class MainActivity extends ListActivity {
 
         public void clearPhotos() {
             mPhotos.clear();
+            mHeights.clear();
+            mColors.clear();
             notifyDataSetChanged();
         }
         
         public void addPhotos() {
             int whichPhoto = (int)Math.round(Math.random() * (mPhotoPool.length - 1));
             int newPhoto = mPhotoPool[whichPhoto];
+            mColors.add(0);
+            mHeights.add(100 + (int)Math.round(Math.random() * 100));
             mPhotos.add(newPhoto);
             notifyDataSetChanged();
         }
 
+        class DrawView extends View {
+            Paint paint = new Paint();
+
+            
+            public DrawView(Context context) {
+                super(context);
+                paint.setColor(0x00000000);
+            }
+            @Override
+            public void onDraw(Canvas canvas) {
+               super.onDraw(canvas);
+//               canvas.drawLine(0, 0, this.getWidth(), 0, paint);
+               canvas.drawLine(0, 2, this.getWidth(), 2, paint);
+               canvas.drawLine(0, 3, this.getWidth(), 3, paint);
+
+            }
+    }        
     }
 }
