@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button4"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="부동산에 전화하니까 나한테 &quot;선생님&quot;이라는 호칭을 쓰는데...... 음... 왠지 나이 든 것 같아 기분이 별로야..." />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#1. 조금 늦은 오후, 집에서 나오니 중학생들이 퇴....근?하는 중이었다. 가는 방향이 같은 아이들과 걷다보니, 애들 키가 꽤 커서 조금 부러워졌는데, 아 생각해보니 나도 중2때 160 넘었던 것 같아, 지금이랑 별 차이 없...(응?)\n\n#2. 시간을 보니 7교시 끝나고, 퇴...아니 하교하는 길인 것 같았다. 생각해보면 정말... 어떻게 학교에서 그 시간까지 별로 좋아하지도 않는 짓을 하면서 보냈나 싶은데.... 아, 어차피 뭘 하냐는 별로 중요하지 않았을 수도.. 누구와 있었냐가 훨씬.... 이건 예나 지금이나 진리인 듯?\n\n#3. 카페에 왔는데, 깜빡하고 이어폰을 안 가져왔다... 노래 소리는 크고, 사람들은 시끄럽고... 만약 여기가 코엑스 근처 카페였다면, 그냥 이어폰을 하나 사버리지 않았을까..?\n\n#4. 말도 안 되는 억지를 진리인양 주장하는 사람들이 요즘 특히 자주 보인다. 옛날 같으면 골방득도한 사람이라 그럴 수도 있겠다 했겠지만, 골방에도 인터넷이 연결된 요즈음에는 그냥 원하는 것만 보고 듣는 닫힌(갇힌?) 사람으로 인식된다. 안타까워 꺼내주고 싶은데, 주로 본인이 나오길 싫어해 그 안에서 행복하니..... 빨간 알약은 그냥 다시 넣어두기로 했다."
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&quot;미래창조과학방송통신위원회&quot;라니 ㅋㅋㅋㅋ 단어들이 이보다 더 걷돌 수 있나 ㅋㅋㅋㅋ 미래? 창조? 과학? 방송? 통신? 위원회? ㅋㅋㅋㅋㅋㅋㅋ" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안드로이드 해외 계정 쓰시는 분 있나요? 기프트 카드 드립니다. 전체가 5$인지 50$인지 잘 모르겠습니다. 아무도 없으면 그냥 쓰레기통으로..." />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="와....ㅋㅋㅋㅋ 카이스트 학적팀 직원 싸가지가 ㅋㅋㅋㅋㅋㅋ 이따위 교직원 월급 주라고 내가 학비를 내야 되나? ㅋㅋㅋㅋ 어이가 없어서 증말 ㅋㅋㅋㅋ" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다시 백수되고 제일 힘든 건, 잠을 잘 못 자는 것. 게다가 지금처럼 배고파서 배아프기 시작하면 진짜 노답...ㅠㅠㅠ" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green" >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="airbnb로 예약완료! 아... 제대로 열쇠 받을 수 있을까...? 벌써부터 걱정된다 ㅋㅋㅋㅋㅋㅋ" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue" >
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안드로이드 마켓 기프트 카드 5$(50센트 10장) 가 있는데, 한국 계정에서는 못 쓰네요...ㅠ 필요한 분 있으면 손! 선착순으로 나누어 드릴게요~" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UMF는 정말 가야 되나 말아야 되나 끝까지 고민이당..." />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green" >
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다시 백수된 기념(?)으로 책상 정리와 방 청소를 싹 다 하고, 회사 다니느라 집안 정리 못하고 사는 바쁜 현대인 코스프레를 완성했다." />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue" >
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구글 인턴 생활 정리.\n\n#1. 결론부터 말하자면, 구글에 다시 일하러 가진 않을 것 같다. 적어도 5년 이내엔. 그리고 적어도 한국 오피스엔.\n\n#2. 무엇이 문제였냐면, 우선 매니저랑 잘 안 맞았다. 서로 잘 안 맞는다는 건 금방 알았지만, 아무도 이걸 개선할 의지가 없었다.\n\n#3. conversion을 포기한 후부터는, 생활도 마음도 매우매우 편해졌다. 지각 출근, 점심에 2시간 놀기, 칼 퇴근을 시전하였다.\n\n#4. 동기 부여가 잘 안 됐던 것 같다. 부담스럽게 많은 돈을 받는 것도 아니었고, conversion에 대한 기대도 하기 힘들었고, 일도 딱히 재밌지 않았고...\n\n#5. 사실 일이 재미없었다. 그러니까 내가 아무리 음악에 관심이 많아도, 재즈가 왜 좋은지 아직도 모르듯, 했던 일에서도 그런 느낌을 받았다. &apos;이게 왜 재밌지?&apos;\n\n#6. 게다가 사람들에게서도 재미를 못 느꼈다. 정직원과는 뭔가 보이지 않는 문턱같은 것도 좀 느껴졌고... 엔지니어 중에는 딱히 끌리는(?) 사람이 거의(!) 없었다.\n\n#7. 그러다보니 대체로 나와 처지가 비슷했던(?) 사람들과 많이 친해졌다. 아무래도 서로 공감할 수 있는 부분이 많았던 듯. 심적으로 도움이 엄청 많이 됐다. 그런 친구들(?)이 생긴 게 최대 수확이랄까나..." />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red" >
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘도 이상한 꿈... 좋은 일이 하나도 없는 꿈이었다. 어제완 다르게 현실에 있을 법한 나쁜 일들의 연속... 다만 그렇기 때문에 꿈에서 깼을 때, 기분이 별로 나쁘지 않았다." />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
