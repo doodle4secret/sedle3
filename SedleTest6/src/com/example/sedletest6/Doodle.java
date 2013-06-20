@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,6 +14,9 @@ public class Doodle extends RelativeLayout {
     private Integer[] mStringPool = {
             R.string.post0, R.string.post1, R.string.post2, R.string.post3, R.string.post4, R.string.post5, R.string.post6,
             R.string.post7, R.string.post8, R.string.post9, R.string.post10, R.string.post11 };
+    private Integer[] mImagePool = {
+            R.drawable.person, R.drawable.person2,
+            R.drawable.thumb, R.drawable.thumb2,};
 	private int bgcolor;
 	
 	public int getBgcolor() { return bgcolor; }
@@ -31,12 +35,12 @@ public class Doodle extends RelativeLayout {
 		tv.setLayoutParams(new AbsListView.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		int resid = (int)Math.round(Math.random() * (mStringPool.length - 1));
 		tv.setText(mStringPool[resid]);
-		tv.setPadding(24, 24, 24, 24);
-		if (r * 0.30 + g * 0.59 + b * 0.11 < 128) {
-			tv.setTextColor(0xffffffff);
-		} else {
-			tv.setTextColor(0xff000000);
-		}		
+		
+		float den = context.getResources().getDisplayMetrics().density;
+		int dp20 = (int)(20 * den);
+		tv.setPadding(dp20, dp20, dp20, dp20);
+		boolean bg_is_dark = r * 0.30 + g * 0.59 + b * 0.11 < 128; 
+		tv.setTextColor(bg_is_dark ? 0xffffffff : 0xff000000);
 		this.addView(tv);
 		
 		LineView lv = new LineView(context);
@@ -44,6 +48,20 @@ public class Doodle extends RelativeLayout {
 		lv.paint.setColor(upcolor);
 		lv.paint2.setColor(0x7fffffff & upcolor);
 		this.addView(lv);
+		
+		ImageView iv = new ImageView(context);
+        iv.setImageResource(bg_is_dark ? mImagePool[3] : mImagePool[2]);
+        iv.setAdjustViewBounds(true);
+        int dp18 = (int)(18 * den);
+        int dp16 = (int)(16 * den);
+        int dp2 = (int)(2 * den);
+        int dp4 = (int)(4 * den);
+        RelativeLayout.LayoutParams ivlp = new RelativeLayout.LayoutParams(dp18, dp16);
+        ivlp.setMargins(dp2, dp20 + dp4, dp2, dp4);
+        iv.setLayoutParams(ivlp);
+        iv.setAlpha(0.4f);
+//        iv.setBackgroundResource(R.drawable.ic_launcher);		
+		this.addView(iv);
 	}
 	
     class LineView extends View {
